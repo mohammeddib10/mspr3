@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personne index{% endblock %}
+{% block body %}
+
+    <!--Main layout-->
+    <main class="pt-5 mx-lg-5">
+        <div class="container-fluid mt-5">
+
+
+            {% include "Common/Heading.html.twig" %}
+
+
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-lg-12 col-md-12 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <div class="card-header">Personnes </div>
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Firsname</th>
+                                    <th>Lastname</th>
+                                    <th>Birthdaydate</th>
+                                    <th>Entreprise</th>
+                                    <th>Salary</th>
+                                    <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for employer in employers %}
+                                    <tr>
+                                        <td>{{ employer.id }}</td>
+                                        <td>{{ employer.firsname }}</td>
+                                        <td>{{ employer.lastname }}</td>
+                                        <td>{{ employer.birthdaydate ? employer.birthdaydate|date('Y-m-d') : '' }}</td>
+                                        <td>{{ employer.entreprise.name }}</td>
+                                        <td>{{ employer.salary }}€</td>
+                                        <td>
+                                            <a class="btn btn-info" href="{{ path('employer_show', {'id': employer.id}) }}">show</a>
+                                            <a class="btn btn-secondary" href="{{ path('employer_edit', {'id': employer.id}) }}">edit</a>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="6">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <a href="{{ path('employer_new') }}">Create new Employer</a>
+
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+
+
+            </div>
+            <!--Grid row-->
+
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+
+{% endblock %}
+
+
+

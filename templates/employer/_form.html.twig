@@ -1,0 +1,33 @@
+{{ form_start(form) }}
+<div class="form-row">
+    <div class="col-md-6 mb-3">
+        <label for="firsname">Prénom : </label>
+        {{ form_widget(form.firsname, { 'attr': {'class': 'form-control', 'id': 'firsname'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="lastname">Nom : </label>
+        {{ form_widget(form.lastname, { 'attr': {'class': 'form-control', 'id': 'lastname'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="birthdaydate">Date de naissance</label>
+        {{ form_widget(form.birthdaydate, { 'attr': {'class': 'form-control', 'id': 'birthdaydate'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="salary">Salaire : </label>
+        {{ form_widget(form.salary, { 'attr': {'class': 'browser-default custom-select' , 'id': 'salary'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="entreprise">Entreprise  : </label>
+        {{ form_widget(form.entreprise, { 'attr': {'class': 'form-control', 'id': 'entreprise'} }) }}
+    </div>
+</div>
+
+<br>
+
+<div class="text-center">
+    <button type="submit" class="btn btn-success" id="submitButton">Submit</button>
+</div>
+
+{{ form_end(form) }}
+
+

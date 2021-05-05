@@ -1,0 +1,41 @@
+{{ form_start(form) }}
+<div class="form-row">
+    <div class="col-md-6 mb-3">
+        <label for="name">name : </label>
+        {{ form_widget(form.name, { 'attr': {'class': 'form-control', 'id': 'name'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="turnover">turnover : </label>
+        {{ form_widget(form.turnover, { 'attr': {'class': 'form-control', 'id': 'turnover'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="payroll">payroll : </label>
+        {{ form_widget(form.payroll, { 'attr': {'class': 'form-control', 'id': 'payroll'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="address">address : </label>
+        {{ form_widget(form.address, { 'attr': {'class': 'browser-default custom-select' , 'id': 'address'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="codepostal">codepostal  : </label>
+        {{ form_widget(form.codepostal, { 'attr': {'class': 'form-control', 'id': 'codepostal'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="ville">ville  : </label>
+        {{ form_widget(form.ville, { 'attr': {'class': 'form-control', 'id': 'ville'} }) }}
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="pays">pays  : </label>
+        {{ form_widget(form.pays, { 'attr': {'class': 'form-control', 'id': 'pays'} }) }}
+    </div>
+</div>
+
+<br>
+
+<div class="text-center">
+    <button type="submit" class="btn btn-success" id="submitButton">Submit</button>
+</div>
+
+{{ form_end(form) }}
+
+

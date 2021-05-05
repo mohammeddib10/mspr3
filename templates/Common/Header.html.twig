@@ -1,0 +1,28 @@
+<!--Main Navigation-->
+<header>
+
+    <!-- Sidebar -->
+    <div class="sidebar-fixed position-fixed">
+
+        {% set _template = app.request.get('_controller')|split('::') %}
+        {% set bundle = _template[0]|split('\\') %}
+        <a class="logo-wrapper waves-effect">
+            <img src="{{ asset('build/images/logoey.png')}}" class="img-fluid" alt="">
+        </a>
+
+        <div class="list-group list-group-flush">
+            <a href="{{ path('dashboard') }}" class="list-group-item {% if bundle[2] == 'DashboardController' %} active {% endif %} list-group-item-action waves-effect">
+                <i class="fas fa-globe-europe mr-3"></i>Acceuil
+            </a>
+            <a href="{{ path('client_index') }}" class="list-group-item {% if bundle[2] == 'ClientController' %} active {% endif %} list-group-item-action waves-effect">
+                <i class="fas fa-user-friends mr-3"></i>Clients
+            </a>
+            <a href="{{ path('employer_index') }}" class="list-group-item {% if bundle[2] == 'EmployerController' %} active {% endif %} list-group-item-action waves-effect">
+                <i class="fas fa-city mr-3"></i>Employees</a>
+        </div>
+
+    </div>
+    <!-- Sidebar -->
+
+</header>
+<!--Main Navigation-->

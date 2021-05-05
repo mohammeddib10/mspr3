@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client index{% endblock %}
+{% block body %}
+
+    <!--Main layout-->
+    <main class="pt-5 mx-lg-5">
+        <div class="container-fluid mt-5">
+
+
+            {% include "Common/Heading.html.twig" %}
+
+
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-lg-12 col-md-12 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <div class="card-header">Clients </div>
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Turnover</th>
+                                    <th>Payroll</th>
+                                    <th>Address</th>
+                                    <th>Codepostal</th>
+                                    <th>Ville</th>
+                                    <th>Pays</th>
+                                    <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for client in clients %}
+                                    <tr>
+                                        <td>{{ client.id }}</td>
+                                        <td>{{ client.name }}</td>
+                                        <td>{{ client.turnover }}€</td>
+                                        <td>{{ client.payroll }}€</td>
+                                        <td>{{ client.address }}</td>
+                                        <td>{{ client.codepostal }}</td>
+                                        <td>{{ client.ville }}</td>
+                                        <td>{{ client.pays }}</td>
+                                        <td>
+                                            <a class="btn btn-info" href="{{ path('client_show', {'id': client.id}) }}">show</a>
+                                            <a class="btn btn-secondary" href="{{ path('client_edit', {'id': client.id}) }}">edit</a>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="9">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <a href="{{ path('client_new') }}">Create new Client</a>
+
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+
+
+            </div>
+            <!--Grid row-->
+
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
